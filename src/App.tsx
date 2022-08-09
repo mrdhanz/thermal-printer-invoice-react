@@ -45,7 +45,6 @@ const sendPrintData = async (
     ];
     let encoder = new EscPosEncoder();
     let result = encoder.table(InvoiceColumn, data).encode();
-    encoder.qrcode("https://codesandbox.io", 1, 64, "q").encode();
     // Print text
     return await characteristic.writeValue(result);
   } else {
